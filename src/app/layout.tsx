@@ -1,5 +1,6 @@
-import { AppBar, CssBaseline } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
+import { Header } from "@/app/components/organisms/header";
 
 export const metadata: Metadata = {
   title: "React Lab",
@@ -15,7 +16,7 @@ export default function RootLayout({
     <html lang="ja">
       <CssBaseline />
       <body>
-        <AppBar>Header</AppBar>
+        <Header />
         {children}
       </body>
     </html>
