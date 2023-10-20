@@ -1,6 +1,7 @@
 import { CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
 import { Header } from "@/app/_components/organisms/header";
+import { ThemeProvider } from "./_providers/theme-provider";
 
 export const metadata: Metadata = {
   title: "React Lab",
@@ -14,10 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <CssBaseline />
       <body>
-        <Header />
-        {children}
+        <ThemeProvider>
+          <CssBaseline />
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
