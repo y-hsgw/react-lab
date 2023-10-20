@@ -1,6 +1,6 @@
 import { CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
-import { Header } from "@/app/components/organisms/header";
+import { Header } from "@/app/_components/organisms/header";
 
 export const metadata: Metadata = {
   title: "React Lab",

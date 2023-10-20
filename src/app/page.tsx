@@ -1,4 +1,4 @@
-import { LabCards } from "./components/organisms/lab-cards";
+import { LabCards } from "./_components/organisms/lab-cards";
 
 export default function Home() {
   return (
