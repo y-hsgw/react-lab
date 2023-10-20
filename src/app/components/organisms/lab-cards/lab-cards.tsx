@@ -19,6 +19,7 @@ export const LabCards: React.FC = memo(() => {
           key={card.title}
           title={card.title}
           description={card.description}
+          path={card.path}
         />
       ))}
     </Wrapper>
