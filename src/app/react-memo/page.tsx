@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import Link from "next/link";
 import { Metadata } from "next";
 import { findExperiment } from "../_utils/find-experiment";
+import { MemoizedComponent } from "./_components/memoized-component";
 
 const foundExperiment = findExperiment("React.memo");
 
@@ -25,6 +26,9 @@ export default function ReactMemo() {
           https://ja.react.dev/reference/react/memo
         </Link>
       </Typography>
+      <Typography fontWeight="bold">React.memoを使用しない場合</Typography>
+      <Typography fontWeight="bold">React.memoを使用する場合</Typography>
+      <MemoizedComponent />
     </>
   );
 }
