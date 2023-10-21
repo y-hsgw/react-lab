@@ -26,7 +26,7 @@ export const LabCard: React.FC<Props> = memo(({ title, description, path }) => {
         <Typography
           color={({ palette }) => palette.primary.main}
           component={"p"}
-          variant={"h5"}
+          variant={"h6"}
         >
           {title}
         </Typography>
