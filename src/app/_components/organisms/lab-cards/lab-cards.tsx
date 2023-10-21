@@ -1,9 +1,9 @@
 "use client";
 
 import { memo } from "react";
-import { LAB_CARDS } from "./utils/lab-cards";
 import { LabCard } from "../lab-card";
 import { styled } from "@mui/material";
+import { EXPERIMENTS } from "@/app/_utils/experiments";
 
 const Wrapper = styled("div")(({ theme }) => ({
   display: "flex",
@@ -14,12 +14,12 @@ const Wrapper = styled("div")(({ theme }) => ({
 export const LabCards: React.FC = memo(() => {
   return (
     <Wrapper>
-      {LAB_CARDS.map((card) => (
+      {EXPERIMENTS.map((experiment) => (
         <LabCard
-          key={card.title}
-          title={card.title}
-          description={card.description}
-          path={card.path}
+          key={experiment.title}
+          title={experiment.title}
+          description={experiment.description}
+          path={experiment.path}
         />
       ))}
     </Wrapper>
