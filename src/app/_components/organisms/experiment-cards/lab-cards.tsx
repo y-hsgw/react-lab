@@ -11,7 +11,7 @@ const Wrapper = styled("div")(({ theme }) => ({
   gap: theme.spacing(1),
 }));
 
-export const LabCards: React.FC = memo(() => {
+export const ExperimentCards: React.FC = memo(() => {
   return (
     <Wrapper>
       {EXPERIMENTS.map((experiment) => (
@@ -26,4 +26,4 @@ export const LabCards: React.FC = memo(() => {
   );
 });
 
-LabCards.displayName = "LabCards";
+ExperimentCards.displayName = "ExperimentCards";
