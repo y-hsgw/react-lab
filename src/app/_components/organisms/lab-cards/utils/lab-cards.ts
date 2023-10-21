@@ -1,6 +1,6 @@
-import { Lab } from "@/app/_types";
+import { Experiment } from "@/app/_types";
 
-export const LAB_CARDS: Lab[] = [
+export const LAB_CARDS: Experiment[] = [
   {
     title: "React.memo",
     description:

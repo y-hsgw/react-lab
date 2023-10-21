@@ -4,14 +4,14 @@ import { memo, useCallback } from "react";
 import { ButtonCard } from "../../molecules/button-card";
 import { Typography, styled } from "@mui/material";
 import { useRouter } from "next/navigation";
-import { Lab } from "@/app/_types";
+import { Experiment } from "@/app/_types";
 
 const Wrapper = styled("div")({
   width: "33%",
   height: 150,
 });
 
-type Props = Lab;
+type Props = Experiment;
 
 export const LabCard: React.FC<Props> = memo(({ title, description, path }) => {
   const { push } = useRouter();
