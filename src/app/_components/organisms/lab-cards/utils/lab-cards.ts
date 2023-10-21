@@ -1,10 +1,11 @@
-import { LabCardListItem } from "../../lab-card";
+import { Lab } from "@/app/_types";
 
-export const LAB_CARDS: LabCardListItem[] = [
+export const LAB_CARDS: Lab[] = [
   {
-    title: "memo",
-    description: "メモ化",
-    path: "/memo",
+    title: "React.memo",
+    description:
+      "コンポーネントの再レンダリングをスキップすることができるReact.Memoの使用法について",
+    path: "/react-memo",
   },
   {
     title: "useState",

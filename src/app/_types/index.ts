@@ -1,4 +1,4 @@
-export interface LabCardListItem {
+export interface Lab {
   title: string;
   description: string;
   path: __next_route_internal_types__.RouteImpl<"">;
