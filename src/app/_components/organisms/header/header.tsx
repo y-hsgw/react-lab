@@ -5,6 +5,19 @@ import { memo } from "react";
 import MenuIcon from "@mui/icons-material/menu";
 import Link from "next/link";
 
+const StyledAppBar = styled(AppBar)({
+  position: "sticky",
+});
+
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  paddingRight: theme.spacing(2),
+  paddingLeft: theme.spacing(2),
+  [theme.breakpoints.up("sm")]: {
+    paddingRight: theme.spacing(2),
+    paddingLeft: theme.spacing(2),
+  },
+}));
+
 const Title = styled(Link)({
   color: "inherit",
   textDecoration: "none",
@@ -12,8 +25,8 @@ const Title = styled(Link)({
 
 export const Header: React.FC = memo(() => {
   return (
-    <AppBar sx={{ position: "sticky" }}>
-      <Toolbar>
+    <StyledAppBar>
+      <StyledToolbar>
         <IconButton color="inherit">
           <MenuIcon />
         </IconButton>
@@ -22,8 +35,8 @@ export const Header: React.FC = memo(() => {
             React Lab
           </Typography>
         </Title>
-      </Toolbar>
-    </AppBar>
+      </StyledToolbar>
+    </StyledAppBar>
   );
 });
 
