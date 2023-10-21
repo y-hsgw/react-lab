@@ -1,4 +1,4 @@
-import { CssBaseline } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
 import { Header } from "@/app/_components/organisms/header";
 import { ThemeProvider } from "./_providers/theme-provider";
@@ -19,7 +19,9 @@ export default function RootLayout({
         <ThemeProvider>
           <CssBaseline />
           <Header />
-          {children}
+          <Box component={"main"} p={2}>
+            {children}
+          </Box>
         </ThemeProvider>
       </body>
     </html>
