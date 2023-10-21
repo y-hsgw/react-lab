@@ -19,7 +19,7 @@ export default function RootLayout({
         <ThemeProvider>
           <CssBaseline />
           <Header />
-          <Box component={"main"} p={2}>
+          <Box component="main" p={2}>
             {children}
           </Box>
         </ThemeProvider>
