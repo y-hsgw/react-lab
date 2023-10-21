@@ -1,6 +1,6 @@
 import { Experiment } from "@/app/_types";
 
-export const EXPERIMENTS: Experiment[] = [
+export const EXPERIMENTS = [
   {
     title: "React.memo",
     description:
@@ -12,4 +12,4 @@ export const EXPERIMENTS: Experiment[] = [
     description: "ステート",
     path: "/use-state",
   },
-];
+] as const satisfies readonly Experiment[];
