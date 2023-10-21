@@ -4,7 +4,7 @@ import { styled } from "@mui/material";
 import { LabCards } from "./_components/organisms/lab-cards";
 
 const StyledMain = styled("main")(({ theme }) => ({
-  padding: theme.spacing(1),
+  padding: theme.spacing(2),
 }));
 
 export default function Home() {
