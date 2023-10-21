@@ -1,1 +1,1 @@
-export * from "./lab-cards";
+export * from "./experiment-cards";

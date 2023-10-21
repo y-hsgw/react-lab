@@ -1,7 +1,7 @@
 "use client";
 
 import { memo } from "react";
-import { ExperimentCard } from "../lab-card";
+import { ExperimentCard } from "../experiment-card";
 import { styled } from "@mui/material";
 import { EXPERIMENTS } from "@/app/_utils/experiments";
 
