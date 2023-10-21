@@ -2,9 +2,14 @@
 
 import { memo, useCallback } from "react";
 import { ButtonCard } from "../../molecules/button-card";
-import { Typography } from "@mui/material";
+import { Typography, styled } from "@mui/material";
 import { LabCardListItem } from "./types";
 import { useRouter } from "next/navigation";
+
+const Wrapper = styled("div")({
+  width: "33%",
+  height: 150,
+});
 
 type Props = LabCardListItem;
 
@@ -16,10 +21,14 @@ export const LabCard: React.FC<Props> = memo(({ title, description, path }) => {
   }, [path, push]);
 
   return (
-    <ButtonCard onClick={handleClick}>
-      <Typography component={"h3"}>{title}</Typography>
-      <Typography>{description}</Typography>
-    </ButtonCard>
+    <Wrapper>
+      <ButtonCard onClick={handleClick}>
+        <Typography component={"p"} variant={"h5"}>
+          {title}
+        </Typography>
+        <Typography>{description}</Typography>
+      </ButtonCard>
+    </Wrapper>
   );
 });
 
