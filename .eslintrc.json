@@ -11,6 +11,7 @@
   "rules": {
     "unused-imports/no-unused-imports": "error",
     "react/jsx-curly-brace-presence": "error",
-    "prefer-template": "error"
+    "prefer-template": "error",
+    "react/display-name": "off"
   }
 }
