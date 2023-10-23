@@ -2,17 +2,18 @@ import { Typography } from "@mui/material";
 import Link from "next/link";
 import { Metadata } from "next";
 import { findExperiment } from "../_utils/find-experiment";
-import fs from "fs";
 import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
+import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 
 const foundExperiment = findExperiment("React.memo");
 
-const files = {
-  "App.js": fs.readFileSync(
-    "src/app/react-memo/_components/memoized-component.tsx",
-    "utf-8"
-  ),
-};
+const memorizedFiles = readFileInCodeSandbox(
+  "src/app/react-memo/_components/memoized-component.tsx"
+);
+
+const noMemorizedFiles = readFileInCodeSandbox(
+  "src/app/react-memo/_components/no-memorized-component.tsx"
+);
 
 export const metadata: Metadata = {
   title: `React Lab - ${foundExperiment.title} -`,
@@ -35,8 +36,9 @@ export default function ReactMemo() {
         </Link>
       </Typography>
       <Typography fontWeight="bold">React.memoを使用しない場合</Typography>
+      <ExperimentSandpack files={noMemorizedFiles} />
       <Typography fontWeight="bold">React.memoを使用する場合</Typography>
-      <ExperimentSandpack files={files} />
+      <ExperimentSandpack files={memorizedFiles} />
     </>
   );
 }
