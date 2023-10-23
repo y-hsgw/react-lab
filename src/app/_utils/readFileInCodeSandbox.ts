@@ -2,6 +2,6 @@ import fs from "fs";
 
 export const readFileInCodeSandbox = (path: string) => {
   return {
-    "App.js": fs.readFileSync(path, "utf-8"),
+    "App.tsx": fs.readFileSync(path, "utf-8"),
   };
 };

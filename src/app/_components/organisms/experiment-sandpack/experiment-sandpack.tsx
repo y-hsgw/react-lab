@@ -18,7 +18,7 @@ export const ExperimentSandpack: React.FC<Props> = ({ files }) => {
         },
       }}
       files={files}
-      template="react"
+      template="react-ts"
     />
   );
 };
