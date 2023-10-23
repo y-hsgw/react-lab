@@ -1,25 +1,21 @@
-"use client";
-
-import { TextField, Typography } from "@mui/material";
+import { Stack, TextField, Typography } from "@mui/material";
 import { memo, useState } from "react";
 
 interface Props {
   name: string;
 }
 const Greeting: React.FC<Props> = memo(({ name }) => {
-  console.log("Greeting was rendered at", new Date().toLocaleTimeString());
-  return <Typography>{name}</Typography>;
+  console.log(`Greeting was rendered at ${new Date().toLocaleTimeString()}`);
+
+  return <Typography>Hello {name}</Typography>;
 });
 
-Greeting.displayName = "Greeting";
-
-export const MemoizedComponent: React.FC = () => {
+const MemoizedComponent: React.FC = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
 
   return (
-    <div>
-      <Typography>Memo化</Typography>
+    <Stack mt={1} gap={1}>
       <TextField
         label="名前"
         value={name}
@@ -31,8 +27,8 @@ export const MemoizedComponent: React.FC = () => {
         onChange={(e) => setAddress(e.target.value)}
       />
       <Greeting name={name} />
-    </div>
+    </Stack>
   );
 };
 
-MemoizedComponent.displayName = "MemoizedComponent";
+export default MemoizedComponent;
