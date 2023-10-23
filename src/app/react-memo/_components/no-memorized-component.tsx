@@ -1,17 +1,17 @@
 import { Stack, TextField, Typography } from "@mui/material";
-import { memo, useState } from "react";
+import { useState } from "react";
 
 interface Props {
   name: string;
 }
 
-const Greeting: React.FC<Props> = memo(({ name }) => {
+const Greeting: React.FC<Props> = ({ name }) => {
   console.log(`Greeting was rendered at ${new Date().toLocaleTimeString()}`);
 
   return <Typography>Hello {name}</Typography>;
-});
+};
 
-const MemoizedComponent: React.FC = () => {
+export const NoMemoizedComponent: React.FC = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
 
@@ -32,4 +32,4 @@ const MemoizedComponent: React.FC = () => {
   );
 };
 
-export default MemoizedComponent;
+export default NoMemoizedComponent;
