@@ -8,8 +8,9 @@ export const EXPERIMENTS = [
     path: "/react-memo",
   },
   {
-    title: "useState",
-    description: "ステート",
-    path: "/use-state",
+    title: "useMemo",
+    description:
+      "再レンダリング間の計算結果をキャッシュできるuseMemoの使用法について",
+    path: "/use-memo",
   },
 ] as const satisfies readonly Experiment[];
