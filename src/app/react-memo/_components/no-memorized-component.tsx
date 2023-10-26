@@ -11,7 +11,7 @@ const Greeting: React.FC<Props> = ({ name }) => {
   return <Typography>Hello {name}</Typography>;
 };
 
-export const NoMemoizedComponent: React.FC = () => {
+const NoMemoizedComponent: React.FC = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
 
