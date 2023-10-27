@@ -7,27 +7,17 @@ interface Props {
 const TodoList: React.FC<Props> = ({ todoList }) => {
   const [value, setValue] = useState("");
 
-  console.time("filteredTodoList");
   const filteredTodoList = useMemo(() => {
     console.log("filteredTodoList");
     return todoList.filter((todo) => todo !== "");
   }, [todoList]);
-  console.timeEnd("filteredTodoList");
 
-  console.time("noMemorizedFilteredTodoList");
-  const noMemorizedFilteredTodoList = () => {
-    console.log("noMemorizedFilteredTodoList");
-    return todoList.filter((todo) => todo !== "");
-  };
-  console.timeEnd("noMemorizedFilteredTodoList");
+  console.log(`TodoList was rendered at ${new Date().toLocaleTimeString()}`);
 
   return (
     <div>
       <input value={value} onChange={(e) => setValue(e.target.value)} />
       {filteredTodoList.map((todo, i) => (
-        <p key={i}>{todo}</p>
-      ))}
-      {noMemorizedFilteredTodoList().map((todo, i) => (
         <p key={i}>{todo}</p>
       ))}
     </div>
