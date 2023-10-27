@@ -5,7 +5,7 @@ interface User {
   age: number;
 }
 
-const ObjectUseMemo: React.FC = () => {
+const UseMemoObject: React.FC = () => {
   const [user, setUser] = useState<User>({ name: "", age: 0 });
 
   const validateAge = useMemo(() => {
@@ -33,4 +33,4 @@ const ObjectUseMemo: React.FC = () => {
   );
 };
 
-export default ObjectUseMemo;
+export default UseMemoObject;
