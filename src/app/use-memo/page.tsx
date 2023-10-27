@@ -32,6 +32,12 @@ export default function UseMemo() {
         </Typography>
       </div>
       <div>
+        <Typography component="h3" variant="h6" fontWeight="bold">
+          基本的な使用法
+        </Typography>
+        <Typography>
+          第二引数の依存配列の要素が変化していなければ、再計算をスキップする。
+        </Typography>
         <ExperimentSandpack files={basicUseMemoFiles} />
       </div>
     </Stack>
