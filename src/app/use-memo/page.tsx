@@ -28,9 +28,7 @@ export default function UseMemo() {
   return (
     <Stack gap={2}>
       <div>
-        <Typography component="h2" variant="h4" fontWeight="bold">
-          {foundExperiment.title}
-        </Typography>
+        <Typography variant="h1">{foundExperiment.title}</Typography>
         <Typography my={1}>
           useMemoは、再レンダリング間の計算結果をキャッシュできるようにするReactフックです。
           <br />
@@ -40,16 +38,14 @@ export default function UseMemo() {
         </Typography>
       </div>
       <div>
-        <Typography component="h3" variant="h6" fontWeight="bold">
-          基本的な使用法
-        </Typography>
+        <Typography variant="h2">基本的な使用法</Typography>
         <Typography>
           第二引数の依存配列の要素が変化していなければ、再計算をスキップする。
         </Typography>
         <ExperimentSandpack files={basicUseMemoFiles} />
       </div>
       <div>
-        <Typography component="h3" variant="h6" fontWeight="bold">
+        <Typography variant="h2">
           依存配列にオブジェクトを指定する際の注意点
         </Typography>
 
@@ -62,7 +58,7 @@ export default function UseMemo() {
         </Typography>
       </div>
       <div>
-        <Typography component="h4" fontWeight="bold">
+        <Typography variant="h3">
           依存配列にオブジェクトを丸ごと指定するケース
         </Typography>
         <Typography>
@@ -74,7 +70,7 @@ export default function UseMemo() {
         <ExperimentSandpack files={useMemoObjectFiles} />
       </div>
       <div>
-        <Typography component="h4" fontWeight="bold">
+        <Typography variant="h3">
           依存配列に再計算したいオブジェクトのプロパティを指定するケース
         </Typography>
         <Typography>

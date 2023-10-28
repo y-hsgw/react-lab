@@ -14,9 +14,7 @@ export default function UseCallback() {
   return (
     <Stack gap={2}>
       <div>
-        <Typography component="h2" variant="h4" fontWeight="bold">
-          {foundExperiment.title}
-        </Typography>
+        <Typography variant="h1">{foundExperiment.title}</Typography>
         <Typography my={1}>
           useCallbackは、再レンダリングの間に関数定義をキャッシュできるようにするReactフックです。
           <br />
