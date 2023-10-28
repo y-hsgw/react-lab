@@ -1,11 +1,11 @@
 import { Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { Metadata } from "next";
-import { findExperiment } from "../_utils/find-experiment";
+import { getExperiment } from "../_utils/get-experiment";
 import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
 import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 
-const foundExperiment = findExperiment("React.memo");
+const experiment = getExperiment("React.memo");
 
 const memorizedFiles = readFileInCodeSandbox(
   "src/app/react-memo/_components/memoized-component.tsx"
@@ -16,15 +16,15 @@ const noMemorizedFiles = readFileInCodeSandbox(
 );
 
 export const metadata: Metadata = {
-  title: `React Lab - ${foundExperiment.title} -`,
-  description: foundExperiment.description,
+  title: `React Lab - ${experiment.title} -`,
+  description: experiment.description,
 };
 
 export default function ReactMemo() {
   return (
     <Stack gap={2}>
       <div>
-        <Typography variant="h1">{foundExperiment.title}</Typography>
+        <Typography variant="h1">{experiment.title}</Typography>
         <Typography my={1}>
           memoを使うことで、propsが変更されていない場合にコンポーネントの再レンダーをスキップできます。
           <br />

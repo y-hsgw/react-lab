@@ -1,20 +1,20 @@
 import { Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { Metadata } from "next";
-import { findExperiment } from "../_utils/find-experiment";
+import { getExperiment } from "../_utils/get-experiment";
 
-const foundExperiment = findExperiment("useCallback");
+const experiment = getExperiment("useCallback");
 
 export const metadata: Metadata = {
-  title: `React Lab - ${foundExperiment.title} -`,
-  description: foundExperiment.description,
+  title: `React Lab - ${experiment.title} -`,
+  description: experiment.description,
 };
 
 export default function UseCallback() {
   return (
     <Stack gap={2}>
       <div>
-        <Typography variant="h1">{foundExperiment.title}</Typography>
+        <Typography variant="h1">{experiment.title}</Typography>
         <Typography my={1}>
           useCallbackは、再レンダリングの間に関数定義をキャッシュできるようにするReactフックです。
           <br />

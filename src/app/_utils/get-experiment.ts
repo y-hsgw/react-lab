@@ -2,7 +2,7 @@ import { EXPERIMENTS } from "./experiments";
 
 type ExperimentTitle = (typeof EXPERIMENTS)[number]["title"];
 
-export const findExperiment = (title: ExperimentTitle) => {
+export const getExperiment = (title: ExperimentTitle) => {
   const foundExperiments = EXPERIMENTS.find(
     (experiment) => experiment.title === title
   );

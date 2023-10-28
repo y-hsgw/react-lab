@@ -1,11 +1,11 @@
 import { Stack, Typography } from "@mui/material";
-import { findExperiment } from "../_utils/find-experiment";
+import { getExperiment } from "../_utils/get-experiment";
 import { Metadata } from "next";
 import Link from "next/link";
 import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
 import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 
-const foundExperiment = findExperiment("useMemo");
+const experiment = getExperiment("useMemo");
 
 const basicUseMemoFiles = readFileInCodeSandbox(
   "src/app/use-memo/_components/basic-use-memo.tsx"
@@ -20,15 +20,15 @@ const useMemoPropertyFiles = readFileInCodeSandbox(
 );
 
 export const metadata: Metadata = {
-  title: `React Lab - ${foundExperiment.title} -`,
-  description: foundExperiment.description,
+  title: `React Lab - ${experiment.title} -`,
+  description: experiment.description,
 };
 
 export default function UseMemo() {
   return (
     <Stack gap={2}>
       <div>
-        <Typography variant="h1">{foundExperiment.title}</Typography>
+        <Typography variant="h1">{experiment.title}</Typography>
         <Typography my={1}>
           useMemoは、再レンダリング間の計算結果をキャッシュできるようにするReactフックです。
           <br />
