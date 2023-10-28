@@ -1,4 +1,4 @@
-import { Box, CssBaseline } from "@mui/material";
+import { Box, CssBaseline, GlobalStyles } from "@mui/material";
 import type { Metadata } from "next";
 import { Header } from "@/app/_components/organisms/header";
 import { ThemeProvider } from "./_providers/theme-provider";
@@ -18,6 +18,15 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <CssBaseline />
+          <GlobalStyles
+            styles={{
+              code: {
+                padding: "1px 0.25rem",
+                backgroundColor: "rgb(153 161 179/0.1)",
+                borderRadius: 3,
+              },
+            }}
+          />
           <Header />
           <Box component="main" p={2}>
             {children}
