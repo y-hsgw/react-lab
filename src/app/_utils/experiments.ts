@@ -13,4 +13,10 @@ export const EXPERIMENTS = [
       "再レンダリング間の計算結果をキャッシュできるuseMemoの使用法について",
     path: "/use-memo",
   },
+  {
+    title: "useCallback",
+    description:
+      "再レンダリングの間に関数定義をキャッシュできるuseCallbackの使用法について",
+    path: "/use-callback",
+  },
 ] as const satisfies readonly Experiment[];
