@@ -50,6 +50,19 @@ export default function UseMemo() {
       </div>
       <div>
         <Typography component="h3" variant="h6" fontWeight="bold">
+          依存配列にオブジェクトを指定する際の注意点
+        </Typography>
+
+        <Typography>
+          Reactは
+          <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is">
+            Object.is
+          </Link>
+          を使用して依存配列の比較を行います。そのため、下記ケースによって再計算するタイミングが異なるので注意が必要です。
+        </Typography>
+      </div>
+      <div>
+        <Typography component="h4" fontWeight="bold">
           依存配列にオブジェクトを丸ごと指定するケース
         </Typography>
         <Typography>
@@ -61,7 +74,7 @@ export default function UseMemo() {
         <ExperimentSandpack files={useMemoObjectFiles} />
       </div>
       <div>
-        <Typography component="h3" variant="h6" fontWeight="bold">
+        <Typography component="h4" fontWeight="bold">
           依存配列に再計算したいオブジェクトのプロパティを指定するケース
         </Typography>
         <Typography>
