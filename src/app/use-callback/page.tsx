@@ -2,8 +2,18 @@ import { Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { Metadata } from "next";
 import { getExperiment } from "../_utils/get-experiment";
+import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
+import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
 
 const experiment = getExperiment("useCallback");
+
+const inactiveUseCallbackFiles = readFileInCodeSandbox(
+  "src/app/use-callback/_components/inactive-use-callback.tsx"
+);
+
+const activeUseCallbackFiles = readFileInCodeSandbox(
+  "src/app/use-callback/_components/active-use-callback.tsx"
+);
 
 export const metadata: Metadata = {
   title: `React Lab - ${experiment.title} -`,
@@ -22,6 +32,22 @@ export default function UseCallback() {
             https://react.dev/reference/react/useCallback
           </Link>
         </Typography>
+      </div>
+      <div>
+        <Typography variant="h2">useCallbackを使用しない場合</Typography>
+        <Typography my={1}>
+          テーマを切り替えても<code>Button</code>
+          コンポーネントは再レンダーされます。
+        </Typography>
+        <ExperimentSandpack files={inactiveUseCallbackFiles} />
+      </div>
+      <div>
+        <Typography variant="h2">useCallbackを使用する場合</Typography>
+        <Typography my={1}>
+          テーマを切り替えても<code>Button</code>
+          コンポーネントは再レンダーされないです。
+        </Typography>
+        <ExperimentSandpack files={activeUseCallbackFiles} />
       </div>
     </Stack>
   );
