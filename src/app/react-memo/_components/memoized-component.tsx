@@ -1,4 +1,3 @@
-import { Stack, TextField, Typography } from "@mui/material";
 import { memo, useState } from "react";
 
 interface Props {
@@ -8,7 +7,7 @@ interface Props {
 const Greeting: React.FC<Props> = memo(({ name }) => {
   console.log(`Greeting was rendered at ${new Date().toLocaleTimeString()}`);
 
-  return <Typography>Hello {name}</Typography>;
+  return <p>Hello {name}</p>;
 });
 
 const MemoizedComponent: React.FC = () => {
@@ -16,19 +15,13 @@ const MemoizedComponent: React.FC = () => {
   const [address, setAddress] = useState("");
 
   return (
-    <Stack mt={1} gap={1}>
-      <TextField
-        label="名前"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <TextField
-        label="住所"
-        value={address}
-        onChange={(e) => setAddress(e.target.value)}
-      />
+    <form style={{ display: "flex", flexDirection: "column", marginTop: 8 }}>
+      <label>名前</label>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <label>住所</label>
+      <input value={address} onChange={(e) => setAddress(e.target.value)} />
       <Greeting name={name} />
-    </Stack>
+    </form>
   );
 };
 
