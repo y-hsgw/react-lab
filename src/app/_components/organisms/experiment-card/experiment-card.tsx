@@ -6,10 +6,11 @@ import { Typography, styled } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { Experiment } from "@/app/_types";
 
-const Wrapper = styled("div")({
+const Wrapper = styled("div")(({ theme }) => ({
   width: "33%",
   height: 150,
-});
+  padding: theme.spacing(1),
+}));
 
 type Props = Experiment;
 

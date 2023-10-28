@@ -5,11 +5,10 @@ import { ExperimentCard } from "../experiment-card";
 import { styled } from "@mui/material";
 import { EXPERIMENTS } from "@/app/_utils/experiments";
 
-const Wrapper = styled("div")(({ theme }) => ({
+const Wrapper = styled("div")({
   display: "flex",
   flexWrap: "wrap",
-  gap: theme.spacing(1),
-}));
+});
 
 export const ExperimentCards: React.FC = memo(() => {
   return (
