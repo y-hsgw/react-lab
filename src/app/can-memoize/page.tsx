@@ -22,6 +22,14 @@ const notMemoFunctionFile = readFileInCodeSandbox(
   "src/app/can-memoize/_components/not-memo-function.tsx"
 );
 
+const memoFunctionFile = readFileInCodeSandbox(
+  "src/app/can-memoize/_components/memo-function.tsx"
+);
+
+const useCallbackFunctionFile = readFileInCodeSandbox(
+  "src/app/can-memoize/_components/use-callback-function.tsx"
+);
+
 export const metadata: Metadata = {
   title: `React Lab - ${experiment.title} -`,
   description: experiment.description,
@@ -67,6 +75,18 @@ export default function CanMemoize() {
           コンポーネントが再レンダーされています。
         </Typography>
         <ExperimentSandpack files={notMemoFunctionFile} />
+      </div>
+      <div>
+        <Typography>
+          コンポーネント外で関数を定義すればメモ化可能です。
+        </Typography>
+        <ExperimentSandpack files={memoFunctionFile} />
+      </div>
+      <div>
+        <Typography>
+          もしくは<code>useCallback</code>を使用することでもメモ化可能です。
+        </Typography>
+        <ExperimentSandpack files={useCallbackFunctionFile} />
       </div>
     </Stack>
   );
