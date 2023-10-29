@@ -7,15 +7,15 @@ import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 
 const experiment = getExperiment("useMemo");
 
-const basicUseMemoFiles = readFileInCodeSandbox(
+const basicUseMemoFile = readFileInCodeSandbox(
   "src/app/use-memo/_components/basic-use-memo.tsx"
 );
 
-const useMemoObjectFiles = readFileInCodeSandbox(
+const useMemoObjectFile = readFileInCodeSandbox(
   "src/app/use-memo/_components/use-memo-object.tsx"
 );
 
-const useMemoPropertyFiles = readFileInCodeSandbox(
+const useMemoPropertyFile = readFileInCodeSandbox(
   "src/app/use-memo/_components/use-memo-property.tsx"
 );
 
@@ -42,7 +42,7 @@ export default function UseMemo() {
         <Typography>
           第二引数の依存配列の要素が変化していなければ、再計算をスキップする。
         </Typography>
-        <ExperimentSandpack files={basicUseMemoFiles} />
+        <ExperimentSandpack files={basicUseMemoFile} />
       </div>
       <div>
         <Typography variant="h2">
@@ -66,7 +66,7 @@ export default function UseMemo() {
           プロパティが変更された場合、<code>validateAge</code>
           （useMemoの値）は再計算されます。
         </Typography>
-        <ExperimentSandpack files={useMemoObjectFiles} />
+        <ExperimentSandpack files={useMemoObjectFile} />
       </div>
       <div>
         <Typography variant="h3">
@@ -80,7 +80,7 @@ export default function UseMemo() {
           プロパティが変更された場合、<code>validateAge</code>
           は再計算されません。
         </Typography>
-        <ExperimentSandpack files={useMemoPropertyFiles} />
+        <ExperimentSandpack files={useMemoPropertyFile} />
       </div>
     </Stack>
   );

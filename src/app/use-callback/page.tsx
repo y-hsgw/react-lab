@@ -7,11 +7,11 @@ import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack
 
 const experiment = getExperiment("useCallback");
 
-const inactiveUseCallbackFiles = readFileInCodeSandbox(
+const inactiveUseCallbackFile = readFileInCodeSandbox(
   "src/app/use-callback/_components/inactive-use-callback.tsx"
 );
 
-const activeUseCallbackFiles = readFileInCodeSandbox(
+const activeUseCallbackFile = readFileInCodeSandbox(
   "src/app/use-callback/_components/active-use-callback.tsx"
 );
 
@@ -39,7 +39,7 @@ export default function UseCallback() {
           テーマを切り替えても<code>Button</code>
           コンポーネントは再レンダーされます。
         </Typography>
-        <ExperimentSandpack files={inactiveUseCallbackFiles} />
+        <ExperimentSandpack files={inactiveUseCallbackFile} />
       </div>
       <div>
         <Typography variant="h2">useCallbackを使用した場合</Typography>
@@ -47,7 +47,7 @@ export default function UseCallback() {
           テーマを切り替えても<code>Button</code>
           コンポーネントは再レンダーされないです。
         </Typography>
-        <ExperimentSandpack files={activeUseCallbackFiles} />
+        <ExperimentSandpack files={activeUseCallbackFile} />
       </div>
     </Stack>
   );

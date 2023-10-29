@@ -7,11 +7,11 @@ import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 
 const experiment = getExperiment("React.memo");
 
-const memorizedFiles = readFileInCodeSandbox(
+const memorizedFile = readFileInCodeSandbox(
   "src/app/react-memo/_components/memoized-component.tsx"
 );
 
-const noMemorizedFiles = readFileInCodeSandbox(
+const noMemorizedFile = readFileInCodeSandbox(
   "src/app/react-memo/_components/no-memorized-component.tsx"
 );
 
@@ -42,14 +42,14 @@ export default function ReactMemo() {
         <Typography my={1}>
           子コンポーネント（Greeting）へのpropsの値が変わらない場合、子コンポーネントを再レンダーする。
         </Typography>
-        <ExperimentSandpack files={noMemorizedFiles} />
+        <ExperimentSandpack files={noMemorizedFile} />
       </div>
       <div>
         <Typography variant="h2">React.memoを使用した場合</Typography>
         <Typography my={1}>
           子コンポーネント（Greeting）へのpropsの値が変わらない場合、子コンポーネントは再レンダーされない。
         </Typography>
-        <ExperimentSandpack files={memorizedFiles} />
+        <ExperimentSandpack files={memorizedFile} />
       </div>
     </Stack>
   );

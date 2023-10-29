@@ -6,19 +6,19 @@ import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 
 const experiment = getExperiment("メモ化の可否ケース集");
 
-const notMemoObject = readFileInCodeSandbox(
+const notMemoObjectFile = readFileInCodeSandbox(
   "src/app/can-memoize/_components/not-memo-object.tsx"
 );
 
-const memoObject = readFileInCodeSandbox(
+const memoObjectFile = readFileInCodeSandbox(
   "src/app/can-memoize/_components/memo-object.tsx"
 );
 
-const useMemoObject = readFileInCodeSandbox(
+const useMemoObjectFile = readFileInCodeSandbox(
   "src/app/can-memoize/_components/use-memo-object.tsx"
 );
 
-const notMemoFunction = readFileInCodeSandbox(
+const notMemoFunctionFile = readFileInCodeSandbox(
   "src/app/can-memoize/_components/not-memo-function.tsx"
 );
 
@@ -44,19 +44,19 @@ export default function CanMemoize() {
           ex）チェックボックスでテーマを切り替えた時、<code>Greeting</code>
           コンポーネントが再レンダーされています。
         </Typography>
-        <ExperimentSandpack files={notMemoObject} />
+        <ExperimentSandpack files={notMemoObjectFile} />
       </div>
       <div>
         <Typography>
           コンポーネント外でオブジェクトを定義すればメモ化可能です。
         </Typography>
-        <ExperimentSandpack files={memoObject} />
+        <ExperimentSandpack files={memoObjectFile} />
       </div>
       <div>
         <Typography>
           もしくは<code>useMemo</code>を使用することでもメモ化可能です。
         </Typography>
-        <ExperimentSandpack files={useMemoObject} />
+        <ExperimentSandpack files={useMemoObjectFile} />
       </div>
       <div>
         <Typography variant="h2">関数のメモ化ケース</Typography>
@@ -66,7 +66,7 @@ export default function CanMemoize() {
           ex）チェックボックスでテーマを切り替えた時、<code>Button</code>
           コンポーネントが再レンダーされています。
         </Typography>
-        <ExperimentSandpack files={notMemoFunction} />
+        <ExperimentSandpack files={notMemoFunctionFile} />
       </div>
     </Stack>
   );
