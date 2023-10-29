@@ -42,7 +42,7 @@ export default function UseCallback() {
         <ExperimentSandpack files={inactiveUseCallbackFiles} />
       </div>
       <div>
-        <Typography variant="h2">useCallbackを使用する場合</Typography>
+        <Typography variant="h2">useCallbackを使用した場合</Typography>
         <Typography my={1}>
           テーマを切り替えても<code>Button</code>
           コンポーネントは再レンダーされないです。
