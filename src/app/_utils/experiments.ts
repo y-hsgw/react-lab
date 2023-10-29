@@ -20,6 +20,12 @@ export const EXPERIMENTS = [
     path: "/use-callback",
   },
   {
+    title: "useEffect",
+    description:
+      "コンポーネントを外部システムと同期できるuseEffectの使用法について",
+    path: "/use-effect",
+  },
+  {
     title: "メモ化の可否ケース集",
     description: "メモ化できるケース、できないケース例",
     path: "/can-memoize",
