@@ -48,7 +48,6 @@ export default function UseMemo() {
         <Typography variant="h2">
           依存配列にオブジェクトを指定する際の注意点
         </Typography>
-
         <Typography>
           Reactは
           <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is">
