@@ -14,6 +14,10 @@ const memoObject = readFileInCodeSandbox(
   "src/app/can-memoize/_components/memo-object.tsx"
 );
 
+const useMemoObject = readFileInCodeSandbox(
+  "src/app/can-memoize/_components/use-memo-object.tsx"
+);
+
 export const metadata: Metadata = {
   title: `React Lab - ${experiment.title} -`,
   description: experiment.description,
@@ -31,15 +35,23 @@ export default function CanMemoize() {
       <div>
         <Typography variant="h2">オブジェクトの比較</Typography>
         <Typography>
-          React.memoを使用していても、propsで渡す値がオブジェクトの場合は再レンダーしてしまいます。
+          React.memoを使用していても、propsで渡す値がオブジェクトの場合はメモ化できません。
+          <br />
+          ex）<code>Greeting</code>コンポーネントが再レンダーされています。
         </Typography>
         <ExperimentSandpack files={notMemoObject} />
       </div>
       <div>
         <Typography>
-          コンポーネント外でオブジェクトを定義すれば再レンダーされなくなります。
+          コンポーネント外でオブジェクトを定義すればメモ化可能です。
         </Typography>
         <ExperimentSandpack files={memoObject} />
+      </div>
+      <div>
+        <Typography>
+          もしくは<code>useMemo</code>を使用することでもメモ化可能です。
+        </Typography>
+        <ExperimentSandpack files={useMemoObject} />
       </div>
     </Stack>
   );
