@@ -1,14 +1,17 @@
 import { Stack, Typography } from "@mui/material";
 import { getExperiment } from "../_utils/get-experiment";
 import { Metadata } from "next";
-import Link from "next/link";
 import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
 import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 
 const experiment = getExperiment("メモ化の可否ケース集");
 
-const basicUseMemoFiles = readFileInCodeSandbox(
-  "src/app/use-memo/_components/basic-use-memo.tsx"
+const notMemoObject = readFileInCodeSandbox(
+  "src/app/can-memoize/_components/not-memo-object.tsx"
+);
+
+const memoObject = readFileInCodeSandbox(
+  "src/app/can-memoize/_components/memo-object.tsx"
 );
 
 export const metadata: Metadata = {
@@ -16,7 +19,7 @@ export const metadata: Metadata = {
   description: experiment.description,
 };
 
-export default function UseMemo() {
+export default function CanMemoize() {
   return (
     <Stack gap={2}>
       <div>
@@ -28,21 +31,15 @@ export default function UseMemo() {
       <div>
         <Typography variant="h2">オブジェクトの比較</Typography>
         <Typography>
-          第二引数の依存配列の要素が変化していなければ、再計算をスキップする。
+          React.memoを使用していても、propsで渡す値がオブジェクトの場合は再レンダーしてしまいます。
         </Typography>
-        <ExperimentSandpack files={basicUseMemoFiles} />
+        <ExperimentSandpack files={notMemoObject} />
       </div>
       <div>
-        <Typography variant="h2">
-          依存配列にオブジェクトを指定する際の注意点
-        </Typography>
         <Typography>
-          Reactは
-          <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is">
-            Object.is
-          </Link>
-          を使用して依存配列の比較を行います。そのため、下記ケースによって再計算するタイミングが異なるので注意が必要です。
+          コンポーネント外でオブジェクトを定義すれば再レンダーされなくなります。
         </Typography>
+        <ExperimentSandpack files={memoObject} />
       </div>
     </Stack>
   );
