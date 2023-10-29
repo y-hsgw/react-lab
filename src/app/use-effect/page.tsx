@@ -2,8 +2,14 @@ import { Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { Metadata } from "next";
 import { getExperiment } from "../_utils/get-experiment";
+import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
+import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 
 const experiment = getExperiment("useEffect");
+
+const useEffectEventListeningFile = readFileInCodeSandbox(
+  "src/app/use-effect/_components/use-effect-event-listening.tsx"
+);
 
 export const metadata: Metadata = {
   title: `React Lab - ${experiment.title} -`,
@@ -22,6 +28,13 @@ export default function UseEffect() {
             https://react.dev/reference/react/useEffect
           </Link>
         </Typography>
+      </div>
+      <div>
+        <Typography variant="h2">イベントのリッスン</Typography>
+        <Typography>
+          useEffect内で何かしらをリッスンしている場合、クリーアップ関数ではそのリッスンを解除する必要があります。
+        </Typography>
+        <ExperimentSandpack files={useEffectEventListeningFile} />
       </div>
     </Stack>
   );
