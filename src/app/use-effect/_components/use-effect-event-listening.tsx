@@ -4,6 +4,7 @@ const UseEffectEventListening: React.FC = () => {
   const [pressedKey, setPressedKey] = useState("");
 
   useEffect(() => {
+    console.log("calling keypress event");
     const handleKeypress = (e: KeyboardEvent) => {
       setPressedKey(e.key);
     };
