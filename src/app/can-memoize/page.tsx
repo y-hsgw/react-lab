@@ -18,6 +18,10 @@ const useMemoObject = readFileInCodeSandbox(
   "src/app/can-memoize/_components/use-memo-object.tsx"
 );
 
+const notMemoFunction = readFileInCodeSandbox(
+  "src/app/can-memoize/_components/not-memo-function.tsx"
+);
+
 export const metadata: Metadata = {
   title: `React Lab - ${experiment.title} -`,
   description: experiment.description,
@@ -33,11 +37,12 @@ export default function CanMemoize() {
         </Typography>
       </div>
       <div>
-        <Typography variant="h2">オブジェクトの比較</Typography>
+        <Typography variant="h2">オブジェクトのメモ化ケース</Typography>
         <Typography>
           React.memoを使用していても、propsで渡す値がオブジェクトの場合はメモ化できません。
           <br />
-          ex）<code>Greeting</code>コンポーネントが再レンダーされています。
+          ex）チェックボックスでテーマを切り替えた時、<code>Greeting</code>
+          コンポーネントが再レンダーされています。
         </Typography>
         <ExperimentSandpack files={notMemoObject} />
       </div>
@@ -52,6 +57,16 @@ export default function CanMemoize() {
           もしくは<code>useMemo</code>を使用することでもメモ化可能です。
         </Typography>
         <ExperimentSandpack files={useMemoObject} />
+      </div>
+      <div>
+        <Typography variant="h2">関数のメモ化ケース</Typography>
+        <Typography>
+          React.memoを使用していても、propsで渡す値が関数の場合はメモ化できません。
+          <br />
+          ex）チェックボックスでテーマを切り替えた時、<code>Button</code>
+          コンポーネントが再レンダーされています。
+        </Typography>
+        <ExperimentSandpack files={notMemoFunction} />
       </div>
     </Stack>
   );
