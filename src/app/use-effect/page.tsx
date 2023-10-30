@@ -45,13 +45,6 @@ export default function UseEffect() {
         <ExperimentSandpack files={useEffectEventListeningFile} />
       </div>
       <div>
-        <Typography variant="h2">依存配列ありの場合</Typography>
-        <Typography>
-          useEffect内で何かしらをリッスンしている場合、クリーアップ関数ではそのリッスンを解除する必要があります。
-        </Typography>
-        <ExperimentSandpack files={noDependencyArrayFile} />
-      </div>
-      <div>
         <Typography variant="h2">依存配列なしの場合</Typography>
         <Typography>
           依存配列が無い場合、テーマを切り替える度にuseEffectが実行されます。
