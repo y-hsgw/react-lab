@@ -14,11 +14,17 @@ const Greeting: React.FC<Props> = ({ name }) => {
 
 const NoDependencyArray: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
+  const [name, setName] = useState("");
+
   return (
     <div
       style={{
         backgroundColor: isDark ? "black" : "initial",
         color: isDark ? "white" : "initial",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        marginTop: 8,
       }}
     >
       <label>テーマ</label>
@@ -27,7 +33,9 @@ const NoDependencyArray: React.FC = () => {
         checked={isDark}
         onChange={(e) => setIsDark(e.target.checked)}
       />
-      <Greeting name="Tanaka" />
+      <label>名前</label>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <Greeting name={name} />
     </div>
   );
 };
