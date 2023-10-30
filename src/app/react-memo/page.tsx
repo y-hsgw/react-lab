@@ -32,6 +32,7 @@ export default function ReactMemo() {
           <strong>
             メモ化は、親からコンポーネントに渡される props にのみ関係します。
           </strong>
+          <br />
           <Link href="https://ja.react.dev/reference/react/memo" target="_">
             https://ja.react.dev/reference/react/memo
           </Link>
