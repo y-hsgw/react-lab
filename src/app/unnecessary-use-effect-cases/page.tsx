@@ -8,7 +8,7 @@ import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 const experiment = getExperiment("不要なuseEffectのケース集");
 
 const resetStateOnPropsChangeWithEffectFile = readFileInCodeSandbox(
-  "src/app/unnecessary-us-effect-cases/_components/reset-state-on-props-change-with-use-effect.tsx"
+  "src/app/unnecessary-use-effect-cases/_components/reset-state-on-props-change-with-use-effect.tsx"
 );
 
 export const metadata: Metadata = {

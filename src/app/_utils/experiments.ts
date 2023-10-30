@@ -28,7 +28,7 @@ export const EXPERIMENTS = [
   {
     title: "不要なuseEffectのケース集",
     description: "useEffectが不要なケース集",
-    path: "/unnecessary-us-effect-cases",
+    path: "/unnecessary-use-effect-cases",
   },
   {
     title: "メモ化の可否ケース集",
