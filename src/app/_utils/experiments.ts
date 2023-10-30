@@ -26,6 +26,11 @@ export const EXPERIMENTS = [
     path: "/use-effect",
   },
   {
+    title: "不要なuseEffectのケース集",
+    description: "useEffectが不要なケース集",
+    path: "/unnecessary-us-effect-cases",
+  },
+  {
     title: "メモ化の可否ケース集",
     description: "メモ化できるケース、できないケース例",
     path: "/can-memoize",
