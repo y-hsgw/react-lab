@@ -27,7 +27,7 @@ const ResetStateOnPropsChangeWithUseEffect: React.FC = () => {
   };
 
   return (
-    <div style={{}}>
+    <div>
       <input
         type="radio"
         value="mickey"
@@ -43,8 +43,9 @@ const ResetStateOnPropsChangeWithUseEffect: React.FC = () => {
       />
       <label>ミニー</label>
       <Comment
-        key={character} // key が変更される度にCommentコンポーネントが再作成される
         name={character}
+        // keyに渡している値（ex: character）が変更される度にCommentコンポーネントが再作成される
+        key={character}
       />
     </div>
   );
