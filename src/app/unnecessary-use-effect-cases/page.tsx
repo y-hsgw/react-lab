@@ -11,6 +11,10 @@ const resetStateOnPropsChangeWithEffectFile = readFileInCodeSandbox(
   "src/app/unnecessary-use-effect-cases/_components/reset-state-on-props-change-with-use-effect.tsx"
 );
 
+const resetStateOnPropsChangeWithKey = readFileInCodeSandbox(
+  "src/app/unnecessary-use-effect-cases/_components/reset-state-on-props-change-with-key.tsx"
+);
+
 export const metadata: Metadata = {
   title: `React Lab - ${experiment.title} -`,
   description: experiment.description,
@@ -41,12 +45,19 @@ export default function UnnecessaryUseEffectCases() {
         </Typography>
       </div>
       <div>
+        <Typography variant="h3">useEffectを使用する場合</Typography>
+        <Typography>
+          useEffectを使用してpropsで受け取った値を依存配列に指定して、stateをリセットします。
+        </Typography>
+        <ExperimentSandpack files={resetStateOnPropsChangeWithEffectFile} />
+      </div>
+      <div>
         <Typography variant="h3">useEffectを使用しない場合</Typography>
         <Typography>
           <code>key</code>
           属性を使用することでstateをリセットすることができます。
         </Typography>
-        <ExperimentSandpack files={resetStateOnPropsChangeWithEffectFile} />
+        <ExperimentSandpack files={resetStateOnPropsChangeWithKey} />
       </div>
     </Stack>
   );

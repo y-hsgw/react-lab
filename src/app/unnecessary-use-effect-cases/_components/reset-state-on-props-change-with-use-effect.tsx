@@ -1,4 +1,4 @@
-import { ChangeEvent, memo, useState } from "react";
+import { ChangeEvent, memo, useEffect, useState } from "react";
 
 interface Props {
   name: string;
@@ -6,6 +6,10 @@ interface Props {
 
 const Comment: React.FC<Props> = memo(({ name }) => {
   const [comment, setComment] = useState("");
+
+  useEffect(() => {
+    setComment("");
+  }, [name]);
 
   return (
     <form>
@@ -42,11 +46,7 @@ const ResetStateOnPropsChangeWithUseEffect: React.FC = () => {
         onChange={handleChange}
       />
       <label>ミニー</label>
-      <Comment
-        name={character}
-        // keyに渡している値（ex: character）が変更される度にCommentコンポーネントが再作成される
-        key={character}
-      />
+      <Comment name={character} />
     </div>
   );
 };
