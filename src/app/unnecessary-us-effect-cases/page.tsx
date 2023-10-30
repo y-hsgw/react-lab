@@ -7,8 +7,8 @@ import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 
 const experiment = getExperiment("不要なuseEffectのケース集");
 
-const useEffectEventListeningFile = readFileInCodeSandbox(
-  "src/app/use-effect/_components/use-effect-event-listening.tsx"
+const resetStateOnPropsChangeWithEffectFile = readFileInCodeSandbox(
+  "src/app/unnecessary-us-effect-cases/_components/reset-state-on-props-change-with-use-effect.tsx"
 );
 
 export const metadata: Metadata = {
@@ -33,11 +33,20 @@ export default function UnnecessaryUseEffectCases() {
         </Typography>
       </div>
       <div>
-        <Typography variant="h2">イベントのリッスン</Typography>
-        <Typography>
-          useEffect内で何かしらをリッスンしている場合、クリーアップ関数ではそのリッスンを解除する必要があります。
+        <Typography variant="h2">
+          propsが変更されたときに全てのstateをリセットする
         </Typography>
-        <ExperimentSandpack files={useEffectEventListeningFile} />
+        <Typography>
+          propsの値が変更された時にuseStateのstate変数をリセットするケースについて比較します。
+        </Typography>
+      </div>
+      <div>
+        <Typography variant="h3">useEffectを使用しない場合</Typography>
+        <Typography>
+          <code>key</code>
+          属性を使用することでstateをリセットすることができます。
+        </Typography>
+        <ExperimentSandpack files={resetStateOnPropsChangeWithEffectFile} />
       </div>
     </Stack>
   );
