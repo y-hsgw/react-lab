@@ -11,12 +11,16 @@ const resetStateOnPropsChangeWithEffectFile = readFileInCodeSandbox(
   "src/app/unnecessary-use-effect-cases/_components/reset-state-on-props-change-with-use-effect.tsx"
 );
 
-const resetStateOnPropsChangeWithKey = readFileInCodeSandbox(
+const resetStateOnPropsChangeWithKeyFile = readFileInCodeSandbox(
   "src/app/unnecessary-use-effect-cases/_components/reset-state-on-props-change-with-key.tsx"
 );
 
-const partialResetStateOnPropsChangeWithKey = readFileInCodeSandbox(
+const partialResetStateOnPropsChangeWithUseEffectFile = readFileInCodeSandbox(
   "src/app/unnecessary-use-effect-cases/_components/partial-reset-state-on-props-change-with-use-effect.tsx"
+);
+
+const partialResetStateOnPropsChangeFile = readFileInCodeSandbox(
+  "src/app/unnecessary-use-effect-cases/_components/partial-reset-state-on-props-change.tsx"
 );
 
 export const metadata: Metadata = {
@@ -61,7 +65,7 @@ export default function UnnecessaryUseEffectCases() {
           <code>key</code>
           属性を使用することでstateをリセットすることができます。
         </Typography>
-        <ExperimentSandpack files={resetStateOnPropsChangeWithKey} />
+        <ExperimentSandpack files={resetStateOnPropsChangeWithKeyFile} />
       </div>
       <div>
         <Typography variant="h2">
@@ -70,16 +74,39 @@ export default function UnnecessaryUseEffectCases() {
         <Typography>
           propsの値が変更されたときに全部のstateではなく一部のみをリセットするケースについて比較します。
           <br />
-          ex）追加したメンバーの中から任意のメンバーを選択。その後、再度メンバーを追加すると選択がリセットされるが、グループ名はリセットされない仕様を例とします。
+          <code>List</code>
+          コンポーネントは、propとして<code>items</code>
+          （アイテムのリスト）を受け取り、選択されたアイテムを
+          <code>selectionItem</code>ステート変数に保持します。<code>items</code>
+          propの値が異なる配列を受け取るたびに、<code>selectionItem</code>
+          ステートをundefinedにリセットしたいとします。 ただ、<code>name</code>
+          （あなたの名前）ステートはリセットされないようにします。
         </Typography>
       </div>
       <div>
         <Typography variant="h3">useEffectを使用する場合</Typography>
         <Typography>
-          useEffectを使用してpropsで受け取った値を依存配列に指定して、一部のstateをリセットします。
+          useEffectを使用してpropsで受け取った<code>items</code>
+          を依存配列に指定して、<code>items</code>
+          propの値が異なる配列を受け取るたび
+          <code>selectionItem</code>
+          ステートをundefinedにリセットします。
           <br />
         </Typography>
-        <ExperimentSandpack files={partialResetStateOnPropsChangeWithKey} />
+        <ExperimentSandpack
+          files={partialResetStateOnPropsChangeWithUseEffectFile}
+        />
+      </div>
+      <div>
+        <Typography variant="h3">useEffectを使用しない場合</Typography>
+        <Typography>
+          <code>selectedId</code>
+          ステートを保持するようにし、その値が<code>items</code>
+          内のIDと一致する場合は、<code>selectionItem</code>
+          にその値を保持します。そうでない場合は、一致するアイテムが見つからなかったため、
+          <code>selectionItem</code>はundefinedになります。
+        </Typography>
+        <ExperimentSandpack files={partialResetStateOnPropsChangeFile} />
       </div>
     </Stack>
   );
