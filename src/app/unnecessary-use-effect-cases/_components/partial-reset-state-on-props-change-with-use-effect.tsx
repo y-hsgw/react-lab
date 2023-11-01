@@ -10,11 +10,11 @@ interface Props {
 }
 
 const List: React.FC<Props> = memo(({ items }) => {
-  const [groupName, setGroupName] = useState("");
+  const [name, setName] = useState("");
   const [selectionItem, setSelectionItem] = useState<Item>();
 
-  const handleGroupNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setGroupName(e.target.value);
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
   };
 
   const handleRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,16 +28,18 @@ const List: React.FC<Props> = memo(({ items }) => {
 
   return (
     <div>
+      <form>
+        <label>
+          あなたの名前
+          <input value={name} onChange={handleNameChange} />
+        </label>
+      </form>
       {selectionItem ? (
         <p>選択中：{selectionItem.name}</p>
       ) : (
-        <p>メンバーを選択してください</p>
+        <p>お気に入りを選択してください</p>
       )}
       <form style={{ display: "flex", flexDirection: "column" }}>
-        <label>
-          グループ名
-          <input value={groupName} onChange={handleGroupNameChange} />
-        </label>
         {items.map((item) => (
           <label key={item.id}>
             {item.name}
@@ -55,25 +57,29 @@ const List: React.FC<Props> = memo(({ items }) => {
 });
 
 const PartialResetStateOnPropsChangeWithUseEffect: React.FC = () => {
-  const [name, setName] = useState("");
   const [items, setItems] = useState<Item[]>([]);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+  const handleAnimalClick = () => {
+    setItems([
+      { id: 1, name: "ネコ" },
+      { id: 2, name: "イヌ" },
+      { id: 3, name: "ウサギ" },
+    ]);
   };
 
-  const handleAddButtonClick = () => {
-    if (!name) return;
-    setItems((prev) => [...prev, { id: prev.length, name }]);
+  const handleFoodClick = () => {
+    setItems([
+      { id: 10, name: "寿司" },
+      { id: 20, name: "焼き肉" },
+      { id: 30, name: "ラーメン" },
+    ]);
   };
 
   return (
     <div>
-      <label>
-        名前
-        <input value={name} onChange={handleChange} />
-      </label>
-      <button onClick={handleAddButtonClick}>追加</button>
+      <p>カテゴリを選択してください。</p>
+      <button onClick={handleAnimalClick}>動物</button>
+      <button onClick={handleFoodClick}>食べ物</button>
       <List items={items} />
     </div>
   );
