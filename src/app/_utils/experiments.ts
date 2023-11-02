@@ -35,4 +35,10 @@ export const EXPERIMENTS = [
     description: "メモ化できるケース、できないケース例",
     path: "/can-memoize",
   },
+  {
+    title: "useSyncExternalStore",
+    description:
+      "外部ストアをサブスクライブできるようにするuseSyncExternalStoreの使用法について",
+    path: "/use-sync-external-store",
+  },
 ] as const satisfies readonly Experiment[];
