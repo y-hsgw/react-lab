@@ -7,11 +7,11 @@ const StyledCard = styled(Card)({
 
 const StyledCardActionArea = styled(CardActionArea)({
   height: "100%",
-  overflow: "auto",
 });
 
 const StyledCardContent = styled(CardContent)({
   height: "100%",
+  overflow: "auto",
 });
 
 interface Props {
