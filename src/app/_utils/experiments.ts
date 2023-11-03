@@ -31,6 +31,11 @@ export const EXPERIMENTS = [
     path: "/use-effect",
   },
   {
+    title: "useRef",
+    description: "レンダリングに必要のない値を参照できるuseRefの使用法について",
+    path: "/use-ref",
+  },
+  {
     title: "不要なuseEffectのケース集",
     description: "useEffectが不要なケース集",
     path: "/unnecessary-use-effect-cases",
