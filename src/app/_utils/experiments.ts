@@ -2,6 +2,11 @@ import { Experiment } from "@/app/_types";
 
 export const EXPERIMENTS = [
   {
+    title: "useState",
+    description: "コンポーネントに状態変数を追加できるuseStateの使用法について",
+    path: "/use-state",
+  },
+  {
     title: "React.memo",
     description:
       "コンポーネントの再レンダリングをスキップすることができるReact.Memoの使用法について",
