@@ -2,8 +2,14 @@ import { Stack, Typography } from "@mui/material";
 import { getExperiment } from "../_utils/get-experiment";
 import { Metadata } from "next";
 import Link from "next/link";
+import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
+import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
 
 const experiment = getExperiment("useSyncExternalStore");
+
+const browserApiFile = readFileInCodeSandbox(
+  "src/app/use-sync-external-store/_components/browser-api.tsx"
+);
 
 export const metadata: Metadata = {
   title: `React Lab - ${experiment.title} -`,
@@ -25,6 +31,16 @@ export default function UseSyncExternalStore() {
             https://react.dev/reference/react/useSyncExternalStore
           </Link>
         </Typography>
+      </div>
+      <div>
+        <Typography variant="h3">ブラウザAPIのサブスクライブ</Typography>
+        <Typography>
+          ブラウザーによって公開され、時間の経過とともに変化する値をサブスクライブするケースで使用できます。
+          <br />
+          ex）デバイスをネットワークから切断すると「❌
+          Disconnected」が表示されます。
+        </Typography>
+        <ExperimentSandpack files={browserApiFile} />
       </div>
     </Stack>
   );
