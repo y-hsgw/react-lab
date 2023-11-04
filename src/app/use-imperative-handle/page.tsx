@@ -7,6 +7,10 @@ import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack
 
 const experiment = getExperiment("useImperativeHandle");
 
+const basicUseImperativeHandleFile = readFileInCodeSandbox(
+  "src/app/use-imperative-handle/_components/basic-use-imperative-handle.tsx"
+);
+
 const multipleRefsFile = readFileInCodeSandbox(
   "src/app/use-imperative-handle/_components/multiple-refs.tsx"
 );
@@ -31,6 +35,14 @@ export default function UseImperativeHandle() {
             https://react.dev/reference/react/useImperativeHandle
           </Link>
         </Typography>
+      </div>
+      <div>
+        <Typography variant="h2">基本的な使用法</Typography>
+        <Typography>
+          DOMノード全体を公開するのではなく、呼び出したいメソッドのみに制限する等カスタマイズが可能です。
+        </Typography>
+
+        <ExperimentSandpack files={basicUseImperativeHandleFile} />
       </div>
       <div>
         <Typography variant="h2">複数のDOMを参照する場合</Typography>
