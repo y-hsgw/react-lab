@@ -2,8 +2,14 @@ import { Stack, Typography } from "@mui/material";
 import { getExperiment } from "../_utils/get-experiment";
 import { Metadata } from "next";
 import Link from "next/link";
+import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
+import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
 
 const experiment = getExperiment("useImperativeHandle");
+
+const multipleRefsFile = readFileInCodeSandbox(
+  "src/app/use-imperative-handle/_components/multiple-refs.tsx"
+);
 
 export const metadata: Metadata = {
   title: `React Lab - ${experiment.title} -`,
@@ -25,6 +31,14 @@ export default function UseImperativeHandle() {
             https://react.dev/reference/react/useImperativeHandle
           </Link>
         </Typography>
+      </div>
+      <div>
+        <Typography variant="h2">複数のDOMを参照する場合</Typography>
+        <Typography>
+          複数のDOMを受け渡す場合でも<code>useImperativeHandle</code>
+          が使用できる
+        </Typography>
+        <ExperimentSandpack files={multipleRefsFile} />
       </div>
     </Stack>
   );
