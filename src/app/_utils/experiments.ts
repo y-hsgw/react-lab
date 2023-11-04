@@ -36,6 +36,12 @@ export const EXPERIMENTS = [
     path: "/use-ref",
   },
   {
+    title: "useImperativeHandle",
+    description:
+      "refとして公開されるハンドルをカスタマイズできるuseImperativeHandleの使用法について",
+    path: "/use-imperative-handle",
+  },
+  {
     title: "不要なuseEffectのケース集",
     description: "useEffectが不要なケース集",
     path: "/unnecessary-use-effect-cases",
