@@ -42,6 +42,12 @@ export const EXPERIMENTS = [
     path: "/use-imperative-handle",
   },
   {
+    title: "useId",
+    description:
+      "アクセシビリティ属性に渡すことができる一意のIDを生成することができるuseIdの使用法について",
+    path: "/use-id",
+  },
+  {
     title: "不要なuseEffectのケース集",
     description: "useEffectが不要なケース集",
     path: "/unnecessary-use-effect-cases",
