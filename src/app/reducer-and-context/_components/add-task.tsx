@@ -1,10 +1,6 @@
 import { ChangeEvent, useState } from "react";
 
-interface Props {
-  onAddTask: (text: string) => void;
-}
-
-const AddTask: React.FC<Props> = ({ onAddTask }) => {
+const AddTask: React.FC = () => {
   const [text, setText] = useState("");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -13,7 +9,6 @@ const AddTask: React.FC<Props> = ({ onAddTask }) => {
 
   const handleClick = () => {
     setText("");
-    onAddTask(text);
   };
 
   return (
