@@ -65,6 +65,12 @@ export const EXPERIMENTS = [
     path: "/unnecessary-use-effect-cases",
   },
   {
+    title: "リデューサーとコンテキストの組み合わせ",
+    description:
+      "useReducerとuseContextを組み合わせて複雑な状態を管理する方法について",
+    path: "/reducer-and-context",
+  },
+  {
     title: "メモ化の可否ケース集",
     description: "メモ化できるケース、できないケース例",
     path: "/can-memoize",
