@@ -1,7 +1,9 @@
 import { ChangeEvent, useState } from "react";
+import { useTasksDispatch } from "./tasks-context";
 
 const AddTask: React.FC = () => {
   const [text, setText] = useState("");
+  const dispatch = useTasksDispatch();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
@@ -9,6 +11,7 @@ const AddTask: React.FC = () => {
 
   const handleClick = () => {
     setText("");
+    dispatch({ type: "added", id: new Date().getTime(), name: text });
   };
 
   return (
