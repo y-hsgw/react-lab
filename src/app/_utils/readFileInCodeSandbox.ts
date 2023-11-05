@@ -1,7 +1,7 @@
 import fs from "fs";
 
-export const readFileInCodeSandbox = (path: string) => {
+export const readFileInCodeSandbox = (path: string, fileName = "App.tsx") => {
   return {
-    "App.tsx": fs.readFileSync(path, "utf-8"),
+    [fileName]: fs.readFileSync(path, "utf-8"),
   };
 };
