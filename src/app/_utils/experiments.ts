@@ -7,6 +7,12 @@ export const EXPERIMENTS = [
     path: "/use-state",
   },
   {
+    title: "useContext",
+    description:
+      "コンポーネントからコンテキストを読み取ってサブスクライブできるようにするuseContextの使用法について",
+    path: "/use-context",
+  },
+  {
     title: "React.memo",
     description:
       "コンポーネントの再レンダリングをスキップすることができるReact.Memoの使用法について",
