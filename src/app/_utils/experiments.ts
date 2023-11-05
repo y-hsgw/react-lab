@@ -13,6 +13,12 @@ export const EXPERIMENTS = [
     path: "/use-context",
   },
   {
+    title: "useReducer",
+    description:
+      "コンポーネントにリデューサーを追加できるuseReducerの使用法について",
+    path: "/use-reducer",
+  },
+  {
     title: "React.memo",
     description:
       "コンポーネントの再レンダリングをスキップすることができるReact.Memoの使用法について",
