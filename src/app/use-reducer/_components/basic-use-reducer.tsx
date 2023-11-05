@@ -12,7 +12,7 @@ type Action =
       todo: Todo;
     }
   | {
-      type: "change";
+      type: "changed";
       todo: Todo;
     };
 
@@ -21,7 +21,7 @@ const todoReducer = (todoList: Todo[], action: Action) => {
     case "added": {
       return [...todoList, action.todo];
     }
-    case "change": {
+    case "changed": {
       return todoList.map((todo) => {
         return todo.id === action.todo.id ? action.todo : todo;
       });
@@ -57,7 +57,7 @@ const BasicUseReducer: React.FC = () => {
     todo: Todo
   ) => {
     dispatch({
-      type: "change",
+      type: "changed",
       todo: {
         ...todo,
         done: e.target.checked,
