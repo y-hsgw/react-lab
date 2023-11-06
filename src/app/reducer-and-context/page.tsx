@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
 import { bestPracticeFile } from "./_utils/best-practice-file";
+import { unifiedContextFile } from "./_utils/unified-context-file";
 
 const experiment = getExperiment("ReducerとContextの組み合わせ");
 
@@ -41,6 +42,24 @@ export default function ReducerAndContext() {
           を簡潔に行うことができるようになりました。
         </Typography>
         <ExperimentSandpack files={bestPracticeFile} />
+      </div>
+      <div>
+        <Typography variant="h2">
+          Contextをstateとdispatchに分けない場合
+        </Typography>
+        <Typography>
+          <code>dispatch</code>
+          を実行するたびに、<code>state</code>
+          を使用している箇所が再レンダリングされます。
+          <br />
+          そのため、<code>Context</code>は<code>state</code>と
+          <code>dispatch</code>
+          に分けておいた方が無駄なレンダリングが防げます。
+          <br />
+          ex）<code>TaskListItem</code>コンポーネントの<code>console.log</code>
+          で確認できます。タスクを編集中に、他のタスクも同時にレンダリングされていることがあります。
+        </Typography>
+        <ExperimentSandpack files={unifiedContextFile} />
       </div>
     </Stack>
   );
