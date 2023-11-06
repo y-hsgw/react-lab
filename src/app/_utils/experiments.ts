@@ -65,7 +65,7 @@ export const EXPERIMENTS = [
     path: "/unnecessary-use-effect-cases",
   },
   {
-    title: "リデューサーとコンテキストの組み合わせ",
+    title: "ReducerとContextの組み合わせ",
     description:
       "useReducerとuseContextを組み合わせて複雑な状態を管理する方法について",
     path: "/reducer-and-context",

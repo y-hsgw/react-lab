@@ -5,7 +5,7 @@ import Link from "next/link";
 import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
 
-const experiment = getExperiment("リデューサーとコンテキストの組み合わせ");
+const experiment = getExperiment("ReducerとContextの組み合わせ");
 
 const basicUseIdFile = readFileInCodeSandbox(
   "src/app/reducer-and-context/_components/app.tsx"
