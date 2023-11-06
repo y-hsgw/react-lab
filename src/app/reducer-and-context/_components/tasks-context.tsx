@@ -53,7 +53,9 @@ const tasksReducer = (tasks: Task[], action: Action): Task[] => {
 
 const TasksContext = createContext<Task[]>([]);
 
-const TasksDispatchContext = createContext<Dispatch<Action> | null>(null);
+const TasksDispatchContext = createContext<Dispatch<Action>>(() => {
+  return;
+});
 
 interface Props {
   children: ReactNode;
@@ -76,8 +78,5 @@ export const useTasks = () => {
 };
 
 export const useTasksDispatch = () => {
-  const dispatch = useContext(TasksDispatchContext);
-  if (!dispatch) throw Error("not found taskDispatch");
-
-  return dispatch;
+  return useContext(TasksDispatchContext);
 };
