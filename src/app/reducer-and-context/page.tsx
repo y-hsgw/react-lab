@@ -2,29 +2,10 @@ import { Stack, Typography } from "@mui/material";
 import { getExperiment } from "../_utils/get-experiment";
 import { Metadata } from "next";
 import Link from "next/link";
-import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
+import { bestPracticeFile } from "./_utils/best-practice-file";
 
 const experiment = getExperiment("ReducerとContextの組み合わせ");
-
-const basicUseIdFile = readFileInCodeSandbox(
-  "src/app/reducer-and-context/_components/best-practice/app.tsx"
-);
-
-const addTaskFile = readFileInCodeSandbox(
-  "src/app/reducer-and-context/_components/best-practice/add-task.tsx",
-  "add-task.tsx"
-);
-
-const tasksContextFile = readFileInCodeSandbox(
-  "src/app/reducer-and-context/_components/best-practice/tasks-context.tsx",
-  "tasks-context.tsx"
-);
-
-const taskListFile = readFileInCodeSandbox(
-  "src/app/reducer-and-context/_components/best-practice/task-list.tsx",
-  "task-list.tsx"
-);
 
 export const metadata: Metadata = {
   title: `React Lab - ${experiment.title} -`,
@@ -59,14 +40,7 @@ export default function ReducerAndContext() {
           バケツリレーを行わなくても状態を読み取り、<code>dispatch</code>
           を簡潔に行うことができるようになりました。
         </Typography>
-        <ExperimentSandpack
-          files={{
-            ...basicUseIdFile,
-            ...addTaskFile,
-            ...tasksContextFile,
-            ...taskListFile,
-          }}
-        />
+        <ExperimentSandpack files={bestPracticeFile} />
       </div>
     </Stack>
   );
