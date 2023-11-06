@@ -1,11 +1,16 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, memo, useState } from "react";
 import { Task, useTasks, useTasksDispatch } from "./tasks-context";
 
 interface Props {
   task: Task;
 }
 
-const TaskListItem: React.FC<Props> = ({ task }) => {
+const TaskListItem: React.FC<Props> = memo(({ task }) => {
+  console.log(
+    `TaskListItem was rendered at ${new Date().toLocaleTimeString()}`,
+    task
+  );
+
   const dispatch = useTasksDispatch();
   const [isEditing, setIsEditing] = useState(false);
 
@@ -64,7 +69,7 @@ const TaskListItem: React.FC<Props> = ({ task }) => {
       <button onClick={handleDeleteButtonClick}>Delete</button>
     </label>
   );
-};
+});
 
 const TaskList: React.FC = () => {
   const tasks = useTasks();
