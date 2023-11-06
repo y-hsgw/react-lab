@@ -8,21 +8,21 @@ import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack
 const experiment = getExperiment("ReducerとContextの組み合わせ");
 
 const basicUseIdFile = readFileInCodeSandbox(
-  "src/app/reducer-and-context/_components/app.tsx"
+  "src/app/reducer-and-context/_components/best-practice/app.tsx"
 );
 
 const addTaskFile = readFileInCodeSandbox(
-  "src/app/reducer-and-context/_components/add-task.tsx",
+  "src/app/reducer-and-context/_components/best-practice/add-task.tsx",
   "add-task.tsx"
 );
 
 const tasksContextFile = readFileInCodeSandbox(
-  "src/app/reducer-and-context/_components/tasks-context.tsx",
+  "src/app/reducer-and-context/_components/best-practice/tasks-context.tsx",
   "tasks-context.tsx"
 );
 
 const taskListFile = readFileInCodeSandbox(
-  "src/app/reducer-and-context/_components/task-list.tsx",
+  "src/app/reducer-and-context/_components/best-practice/task-list.tsx",
   "task-list.tsx"
 );
 
