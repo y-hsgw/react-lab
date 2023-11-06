@@ -60,6 +60,12 @@ export const EXPERIMENTS = [
     path: "/use-id",
   },
   {
+    title: "Suspense",
+    description:
+      "子が読み込みを完了するまでフォールバックを表示できるSuspenseの使用法について",
+    path: "/suspense",
+  },
+  {
     title: "不要なuseEffectのケース集",
     description: "useEffectが不要なケース集",
     path: "/unnecessary-use-effect-cases",
