@@ -1,8 +1,7 @@
 "use client";
 
-import { AppBar, IconButton, Toolbar, styled } from "@mui/material";
+import { AppBar, Toolbar, styled } from "@mui/material";
 import { memo } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 
 const StyledAppBar = styled(AppBar)({
@@ -10,11 +9,9 @@ const StyledAppBar = styled(AppBar)({
 });
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  paddingRight: theme.spacing(2),
-  paddingLeft: theme.spacing(2),
   [theme.breakpoints.up("sm")]: {
-    paddingRight: theme.spacing(2),
-    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(3),
   },
 }));
 
@@ -28,9 +25,6 @@ export const Header: React.FC = memo(() => {
   return (
     <StyledAppBar>
       <StyledToolbar>
-        <IconButton color="inherit">
-          <MenuIcon />
-        </IconButton>
         <Title href="/">React Lab</Title>
       </StyledToolbar>
     </StyledAppBar>
