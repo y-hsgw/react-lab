@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Experiment } from "@/app/_types";
 
 const Wrapper = styled("div")(({ theme }) => ({
-  width: "33%",
+  width: "33.333%",
   height: 150,
   padding: theme.spacing(1),
 }));
