@@ -33,13 +33,7 @@ export default function RootLayout({
             }}
           />
           <Header />
-          <Box
-            component="main"
-            p={2}
-            flex={1}
-            display="flex"
-            justifyContent="center"
-          >
+          <Box component="main" p={2} flex={1} display="flex">
             {children}
           </Box>
         </ThemeProvider>
