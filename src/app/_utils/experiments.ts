@@ -82,6 +82,11 @@ export const EXPERIMENTS = [
     path: "/can-memoize",
   },
   {
+    title: "状態のリセット",
+    description: "状態のリセット方法について",
+    path: "/state-reset",
+  },
+  {
     title: "useSyncExternalStore",
     description:
       "外部ストアをサブスクライブできるようにするuseSyncExternalStoreの使用法について",
