@@ -10,8 +10,13 @@ const experiment = getExperiment("状態のリセット");
 const keyResetFile = readFileInCodeSandbox(
   "src/app/state-reset/_components/key-reset.tsx"
 );
+
 const differentPositionRenderingResetFile = readFileInCodeSandbox(
   "src/app/state-reset/_components/different-position-rendering-reset.tsx"
+);
+
+const samePositionRenderingFile = readFileInCodeSandbox(
+  "src/app/state-reset/_components/same-position-rendering.tsx"
 );
 
 export const metadata: Metadata = {
@@ -47,6 +52,18 @@ export default function StateReset() {
           コンポーネントが独立しています。これが異なる位置でレンダリングしているということです。
         </Typography>
         <ExperimentSandpack files={differentPositionRenderingResetFile} />
+      </div>
+      <div>
+        <Typography variant="h2">
+          同じ位置でレンダリングした場合はリセットされない
+        </Typography>
+        <Typography>
+          <Link href="https://react.dev/learn/understanding-your-ui-as-a-tree#the-render-tree">
+            UIツリー
+          </Link>
+          内で同じ位置でレンダリングしている場合は状態を保持します。
+        </Typography>
+        <ExperimentSandpack files={samePositionRenderingFile} />
       </div>
     </Stack>
   );
