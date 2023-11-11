@@ -3,11 +3,15 @@ import { getExperiment } from "../_utils/get-experiment";
 import { Metadata } from "next";
 import { readFileInCodeSandbox } from "../_utils/readFileInCodeSandbox";
 import { ExperimentSandpack } from "../_components/organisms/experiment-sandpack";
+import Link from "next/link";
 
 const experiment = getExperiment("状態のリセット");
 
 const keyResetFile = readFileInCodeSandbox(
   "src/app/state-reset/_components/key-reset.tsx"
+);
+const differentPositionRenderingResetFile = readFileInCodeSandbox(
+  "src/app/state-reset/_components/different-position-rendering-reset.tsx"
 );
 
 export const metadata: Metadata = {
@@ -28,6 +32,21 @@ export default function StateReset() {
           異なるKeyを渡すと渡されたコンポーネントの状態はリセットされます。
         </Typography>
         <ExperimentSandpack files={keyResetFile} />
+      </div>
+      <div>
+        <Typography variant="h2">
+          コンポーネントを異なる位置でレンダリングする
+        </Typography>
+        <Typography>
+          <Link href="https://react.dev/learn/understanding-your-ui-as-a-tree#the-render-tree">
+            UIツリー
+          </Link>
+          内で異なる位置でレンダリングした場合はDOMから削除されるたびに破棄されます。
+          <br />
+          ex）<code>selectedPerson</code>ごとに<code>Counter</code>
+          コンポーネントが独立しています。これが異なる位置でレンダリングしているということです。
+        </Typography>
+        <ExperimentSandpack files={differentPositionRenderingResetFile} />
       </div>
     </Stack>
   );
