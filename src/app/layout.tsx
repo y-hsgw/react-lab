@@ -1,4 +1,4 @@
-import { Box, CssBaseline, GlobalStyles } from "@mui/material";
+import { CssBaseline, GlobalStyles, Stack } from "@mui/material";
 import type { Metadata } from "next";
 import { Header } from "@/app/_components/organisms/header";
 import { ThemeProvider } from "./_providers/theme-provider";
@@ -33,9 +33,9 @@ export default function RootLayout({
             }}
           />
           <Header />
-          <Box component="main" p={2} flex={1} display="flex">
+          <Stack component="main" p={2} flex={1}>
             {children}
-          </Box>
+          </Stack>
         </ThemeProvider>
       </body>
     </html>

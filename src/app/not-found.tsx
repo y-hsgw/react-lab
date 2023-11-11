@@ -6,7 +6,7 @@ import Link from "next/link";
 const Wrapper = styled(Stack)({
   alignItems: "center",
   justifyContent: "center",
-  width: "100%",
+  flex: 1,
 });
 
 const NotFoundPage = () => {
