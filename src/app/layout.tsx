@@ -20,6 +20,11 @@ export default function RootLayout({
           <CssBaseline />
           <GlobalStyles
             styles={{
+              body: {
+                display: "flex",
+                flexDirection: "column",
+                minHeight: "100vh",
+              },
               code: {
                 padding: "1px 0.25rem",
                 backgroundColor: "rgb(153 161 179/0.1)",
@@ -28,7 +33,13 @@ export default function RootLayout({
             }}
           />
           <Header />
-          <Box component="main" p={2}>
+          <Box
+            component="main"
+            p={2}
+            flex={1}
+            display="flex"
+            justifyContent="center"
+          >
             {children}
           </Box>
         </ThemeProvider>

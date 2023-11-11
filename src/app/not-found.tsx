@@ -6,13 +6,15 @@ import Link from "next/link";
 const Wrapper = styled(Stack)({
   alignItems: "center",
   justifyContent: "center",
-  minHeight: "100vh",
 });
 
 const NotFoundPage = () => {
   return (
     <Wrapper>
-      <Typography>404</Typography>
+      <Typography variant="h1">404</Typography>
+      <Typography>
+        このページはすでに削除されているか、URLが間違っている可能性があります。
+      </Typography>
       <Link href="/">Topページへ戻る</Link>
     </Wrapper>
   );
