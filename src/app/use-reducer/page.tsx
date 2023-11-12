@@ -46,7 +46,10 @@ export default function UseReducer() {
         <Typography variant="h2">前の状態に基づいて状態を更新する</Typography>
         <Typography>
           useStateの
-          <Link href="https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state">
+          <Link
+            href="https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state"
+            target="_"
+          >
             アップデーター関数
           </Link>
           と同様にリデューサーはレンダリング中に実行されます。(アクションは次のレンダリングまでキューに入れられます。)

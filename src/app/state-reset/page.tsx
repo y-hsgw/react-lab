@@ -43,7 +43,10 @@ export default function StateReset() {
           コンポーネントを異なる位置でレンダリングする
         </Typography>
         <Typography>
-          <Link href="https://react.dev/learn/understanding-your-ui-as-a-tree#the-render-tree">
+          <Link
+            href="https://react.dev/learn/understanding-your-ui-as-a-tree#the-render-tree"
+            target="_"
+          >
             UIツリー
           </Link>
           内で異なる位置でレンダリングした場合はDOMから削除されるたびに破棄されます。
@@ -58,7 +61,10 @@ export default function StateReset() {
           同じ位置でレンダリングした場合はリセットされない
         </Typography>
         <Typography>
-          <Link href="https://react.dev/learn/understanding-your-ui-as-a-tree#the-render-tree">
+          <Link
+            href="https://react.dev/learn/understanding-your-ui-as-a-tree#the-render-tree"
+            target="_"
+          >
             UIツリー
           </Link>
           内で同じ位置でレンダリングしている場合は状態を保持します。

@@ -50,7 +50,10 @@ export default function UseMemo() {
         </Typography>
         <Typography>
           Reactは
-          <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is">
+          <Link
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is"
+            target="_"
+          >
             Object.is
           </Link>
           を使用して依存配列の比較を行います。そのため、下記ケースによって再計算するタイミングが異なるので注意が必要です。
