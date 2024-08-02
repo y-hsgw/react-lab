@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@codesandbox/sandpack-client": "^2.13.8",
-    "@codesandbox/sandpack-react": "^2.14.2",
+    "@codesandbox/sandpack-client": "^2.18.2",
+    "@codesandbox/sandpack-react": "^2.18.2",
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.0",
     "@mui/icons-material": "5.15.12",
     "@mui/material": "5.15.12",
-    "next": "^14.2.4",
+    "next": "^14.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -26,9 +26,9 @@
     "@typescript-eslint/eslint-plugin": "^7.13.0",
     "@typescript-eslint/parser": "^7.13.0",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.4",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-unused-imports": "3.1.0",
-    "typescript": "5.4.2"
+    "eslint-config-next": "^14.2.5",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-unused-imports": "^4.0.1",
+    "typescript": "^5.5.4"
   }
 }
