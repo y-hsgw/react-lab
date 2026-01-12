@@ -11,18 +11,20 @@
   "dependencies": {
     "@codesandbox/sandpack-client": "^2.18.2",
     "@codesandbox/sandpack-react": "^2.18.2",
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.0",
     "@mui/icons-material": "5.15.12",
-    "@mui/material": "5.15.12",
-    "next": "^14.2.13",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@mui/material": "^7.3.7",
+    "@mui/material-nextjs": "^7.3.7",
+    "next": "^16.1.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@types/node": "^22.1.0",
-    "@types/react": "18.2.64",
-    "@types/react-dom": "18.2.21",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
     "eslint": "^8.57.0",
