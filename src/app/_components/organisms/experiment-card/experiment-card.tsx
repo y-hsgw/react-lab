@@ -25,11 +25,7 @@ export const ExperimentCard: React.FC<Props> = memo(
     return (
       <Wrapper>
         <ButtonCard onClick={handleClick}>
-          <Typography
-            color={({ palette }) => palette.primary.main}
-            component="p"
-            variant="h6"
-          >
+          <Typography color="primary" component="p" variant="h6">
             {title}
           </Typography>
           <Typography>{description}</Typography>

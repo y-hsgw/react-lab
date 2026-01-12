@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@codesandbox/sandpack-client": "^2.18.2",
-    "@codesandbox/sandpack-react": "^2.18.2",
+    "@codesandbox/sandpack-client": "^2.19.8",
+    "@codesandbox/sandpack-react": "^2.20.0",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.0",
